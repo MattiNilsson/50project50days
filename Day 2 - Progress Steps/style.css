@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Muli', 'sans-serif';
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    width: 30vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.steps{
+    display:flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+}
+.step{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 3px solid gray;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    z-index: 2;
+}
+.step .stepNr{
+    color: gray;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+.step.selected{
+    background-color:  #6f96ff;
+    border: 3px solid #6f96ff;
+    transition: all 0.3s ease 0.3s;
+}
+.step.selected .stepNr{
+    color: white;
+    transition: all 0.3s ease 0.3s;
+}
+
+.line{
+    position: absolute;
+    top: 12px;
+    width: 98%;
+    height: 6px;
+    background-color: gray;
+    z-index: -1;
+}
+
+.line.progress{
+    background-color: #6f96ff;
+    width: 0%;
+    z-index: 1;
+    transition: 0.3s ease-out width;
+}
+
+button{
+    margin: 10px 4px 4px 0px;
+    padding: 4px;
+    width: 60px;
+    height: 40px;
+    font-size: 120%;
+    border: none;
+    background-color: #6f96ff;
+    color: white;
+    border-radius: 4px;
+}
+
+button:disabled{
+    background-color: rgb(53, 53, 53);
+}
+
+@media(max-width: 600px){
+    .container{
+        width: 70vw;
+    }
+}
